@@ -34,11 +34,12 @@
   },
   "dependencies": {
     "@types/node": "^17.0.2",
+    "dotenv": "^10.0.0",
     "fp-ts": "^2.11.5",
     "io-ts": "^2.2.16"
   },
   "validate-branch-name": {
-    "pattern":"^(master|staging|sandbox){1}$|^(feature|bugfix)\/(SHA-\\d+)$",
+    "pattern": "^(master|staging|sandbox){1}$|^(feature|bugfix)/(SHA-\\d+)$",
     "errorMsg": "You do not follow the branch name norm"
   }
 }
