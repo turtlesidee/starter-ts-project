@@ -6,6 +6,7 @@ dotenv.config();
 const configuration: Configuration = {
     service_name: process.env.SERVICE_NAME || '',
     service_port: parseInt(process.env.SERVICE_PORT || '3000'),
+    dispatcher_url: process.env.DISPATCHER_URL || '',
     jwt_secret: process.env.JWT_SECRET || 'private key',
     mongo_configuration: {
         uri: process.env.MONGO_URI || 'uri',
@@ -17,6 +18,12 @@ const configuration: Configuration = {
         api_key: process.env.ABLY_API_KEY || 'key',
         channel_name: process.env.ABLY_CHANNEL_NAME || 'channel_name',
         channel_secret: process.env.ABLY_CHANNEL_SECRET || 'channel_secret',
+    },
+    s3_configuration: {
+        access_key_id: process.env.S3_ACCESS_KEY_ID || 'access key',
+        secret_access_key: process.env.S3_SECRET_ACCESS_KEY || 'secret key',
+        region: process.env.S3_REGION || 'region',
+        s3_bucket_name: process.env.S3_BUCKET_NAME || 'bucket name',
     },
 };
 

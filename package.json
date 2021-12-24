@@ -33,10 +33,19 @@
     "validate-branch-name": "^1.2.1"
   },
   "dependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/helmet": "^4.0.0",
     "@types/node": "^17.0.2",
+    "ably": "^1.2.15",
+    "aws-sdk": "^2.1047.0",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+    "express": "^4.17.2",
     "fp-ts": "^2.11.5",
-    "io-ts": "^2.2.16"
+    "helmet": "^4.6.0",
+    "io-ts": "^2.2.16",
+    "mongodb": "^4.2.2"
   },
   "validate-branch-name": {
     "pattern": "^(master|staging|sandbox){1}$|^(feature|bugfix)/(SHA-\\d+)$",
