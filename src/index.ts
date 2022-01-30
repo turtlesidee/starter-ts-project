@@ -29,6 +29,7 @@ const main = async () => {
         service_name: configuration.service_name,
         service_port: configuration.service_port,
         jwt_secret: configuration.jwt_secret,
+        integrity_service_url: configuration.integrity_service_url,
     };
 
     const http_server = create_http_server(env);

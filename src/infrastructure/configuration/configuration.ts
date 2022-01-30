@@ -1,3 +1,4 @@
+import { URL } from '@turtleside/standard';
 import dotenv from 'dotenv';
 import { Configuration } from './types';
 
@@ -6,7 +7,7 @@ dotenv.config();
 const configuration: Configuration = {
     service_name: process.env.SERVICE_NAME || '',
     service_port: parseInt(process.env.SERVICE_PORT || '3000'),
-    integrity_service_url: process.env.INTEGRITY_SERVICE_URL || '',
+    integrity_service_url: (process.env.INTEGRITY_SERVICE_URL as URL) || ('' as URL),
     jwt_secret: process.env.JWT_SECRET || 'private key',
     mongo_configuration: {
         uri: process.env.MONGO_URI || 'uri',

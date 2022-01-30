@@ -3,6 +3,7 @@ import { Types } from 'ably';
 import RealtimeChannelCallbacks = Types.RealtimeChannelCallbacks;
 import { S3 } from 'aws-sdk';
 import { S3Configuration } from '../infrastructure/configuration/types';
+import { URL } from '@turtleside/standard';
 
 export type Environment = {
     db_collection: Collection;
@@ -12,4 +13,5 @@ export type Environment = {
     service_name: string;
     service_port: number;
     jwt_secret: string;
+    integrity_service_url: URL;
 };
