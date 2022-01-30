@@ -6,7 +6,7 @@ dotenv.config();
 const configuration: Configuration = {
     service_name: process.env.SERVICE_NAME || '',
     service_port: parseInt(process.env.SERVICE_PORT || '3000'),
-    dispatcher_url: process.env.DISPATCHER_URL || '',
+    integrity_service_url: process.env.INTEGRITY_SERVICE_URL || '',
     jwt_secret: process.env.JWT_SECRET || 'private key',
     mongo_configuration: {
         uri: process.env.MONGO_URI || 'uri',

@@ -2,7 +2,7 @@ export type Configuration = {
     service_name: string;
     service_port: number;
     jwt_secret: string;
-    dispatcher_url: string;
+    integrity_service_url: string;
     mongo_configuration: MongoConfiguration;
     ably_configuration: AblyConfiguration;
     s3_configuration: S3Configuration;

@@ -1,9 +1,31 @@
+import {
+    connect_to_ably,
+    connect_to_ably_channel,
+    connect_to_collection,
+    connect_to_mongodb,
+} from '@turtleside/standard';
 import { Environment } from './domain/types';
 import configuration from './infrastructure/configuration/configuration';
 import { create_http_server } from './infrastructure/server/http_server';
 
 const main = async () => {
+    const ably_client = connect_to_ably(configuration.ably_configuration.api_key);
+    const main_channel = connect_to_ably_channel(
+        ably_client,
+        configuration.ably_configuration.channel_name,
+        configuration.ably_configuration.channel_secret,
+    );
+
+    const mongo_client = await connect_to_mongodb(configuration.mongo_configuration);
+    const db_collection = connect_to_collection(
+        mongo_client,
+        configuration.mongo_configuration.database,
+        'db_collection',
+    );
+
     const env: Environment = {
+        db_collection,
+        main_channel,
         service_name: configuration.service_name,
         service_port: configuration.service_port,
         jwt_secret: configuration.jwt_secret,
